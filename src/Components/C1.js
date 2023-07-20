@@ -8,16 +8,14 @@ export default function C1() {
 
   return (
     <div>
-      <Form>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Name</Form.Label>
-        <Form.Control type="text" name='name' onChange={context?.handleChange} value={context?.input.name}/>
+        <Form.Control type="text" name='name' onChange={context?.handleChange} value={context?.input.name} required/>
       </Form.Group>
       <Form.Group className="mb-3">
         <Form.Label>Email</Form.Label>
-        <Form.Control type='email' name='email' onChange={context?.handleChange} value={context?.input.email}/>
+        <Form.Control type='email' name='email' onChange={context?.handleChange} value={context?.input.email} required/>
       </Form.Group>
-    </Form>
     </div>
   );
 }

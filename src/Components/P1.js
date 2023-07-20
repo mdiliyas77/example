@@ -10,9 +10,11 @@ export default function P1() {
 
   return (
     <Container className="pt-5">
+      <form action="" onSubmit={context?.submitData}>
       <C1 />
       <C2 />
-      <Button variant='primary' className='mt-3' onClick={context?.submitData}>Submit</Button>
+      <Button variant='primary' className='mt-3' type='submit'>Submit</Button>
+      </form>
       <C3 />
     </Container>
   );

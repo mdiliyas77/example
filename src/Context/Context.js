@@ -13,7 +13,7 @@ export default function DataContext({ children }) {
       email: "altaf.mugli@gmail.com",
       user_type: "Admin",
       mobile: "8880880547",
-    },
+    }
   ]);
 
   const [input, setInput] = useState({
@@ -34,28 +34,32 @@ export default function DataContext({ children }) {
     getData();
   }, []);
 
-  function submitData() {
+  function submitData(e) {
+    e.preventDefault();
     if (
       input.name === "" ||
       input.email === "" ||
       input.mobile === "" ||
       input.user_type === ""
     ) {
-      toast.warning("All fields are mandatory!!");
+      toast.warning("All fields are mandatory!!",{position:'top-center'});
       return;
     }
-    axios
-      .post("http://localhost:8080/postData")
-      .then((res) => {
-        toast.success("Data added successfully", {
-          progress: true,
-          position: "top-center",
-        });
-        getData();
-      })
-      .catch((err) => {
-        console.log("Error", err);
-      });
+    // axios
+    //   .post("http://localhost:8080/postData")
+    //   .then((res) => {
+    //     toast.success("Data added successfully", {
+    //       progress: true,
+    //       position: "top-center",
+    //     });
+    //     getData();
+    //   })
+    //   .catch((err) => {
+    //     console.log("Error", err);
+    //   });
+    setData([
+      ...data, input
+    ])
   }
 
   function getData() {

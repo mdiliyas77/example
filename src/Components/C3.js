@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import { CustomContext } from "../Context/Context";
 
 export default function C3() {
